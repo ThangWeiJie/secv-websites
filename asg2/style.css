@@ -2,98 +2,107 @@
 body {
   font-family: serif;
   background-color: #ffffff;
-  margin: 0;
-  padding: 0;
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
   color: #000;
 }
   
 /* Grid layout */
 .container {
-  display: grid;
-  grid-template-areas:
+  display: grid;  /* Enables CSS Grid layout */
+  grid-template-areas:  /* Defines the layout areas */
     "left-menu header header"
     "left-menu main right-menu"
     "footer footer footer";
   grid-template-columns: 1fr 3fr 1fr;
-  margin: 0 auto;
+  margin: 0 auto;  /* Horizontally centers the container */
 }
 
+/* Horizontal rule for section separation */
 hr {
   border: none;
   border-top: 2px solid #ccc;
-  margin: 40px 0;
+  margin: 40px 0;  /* Vertical spacing */
 }
 
 /* Header */
 header {
-  grid-area: header;
+  grid-area: header;  /* Assigns the header to the grid area */
   padding: 20px;
   text-align: center;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;  /* Light line at bottom */
 }
   
-/* Left Menu */
+/* Left Menu (sidebar on desktop)*/
 .left-menu {
-  grid-area: left-menu;
+  grid-area: left-menu;  /* Assigns the left menu to the grid area */
   padding: 30px 20px;
   background-color: #f8f8f8;
   border-right: 1px solid #ddd;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-  position: sticky;
-  top: 0;
-  height: 100vh;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);  /* Light shadow for depth */
+  position: sticky;  /* Keeps menu visible when scrolling */
+  top: 0;  /* Sticks to the top of the viewport */
+  height: 100vh;  /* Full height of the viewport */
 }
-  
+
+/* Logo inside the left menu */
 .left-menu .logo {
   width: 120px; 
   display: block;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 20px auto;  /* Centered logo */
 }
 
+/* List inside the left menu */
 .left-menu ul {
-  list-style: none;
+  list-style: none;  /* Removes bullets */
   padding: 0;
   margin: 0;
 }
   
 .left-menu li {
-  margin: 20px 0;
+  margin: 20px 0;  /* Space between menu items */
 }
   
+/* Left menu links */
 .left-menu a {
-  text-decoration: none;
+  text-decoration: none;  /* Removes underline from links */
   color: #333;
   font-weight: bold;
   padding: 8px 12px;  
   display: block;
   border-radius: 6px;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;  /* Smooth hover effect */
 }
-  
+
+/* Hover effect for left menu links */
 .left-menu a:hover {
   background-color: lightgrey;
 }
 
+/* Right menu (sidebar on desktop) */
 .right-menu {
-  grid-area: right-menu;
+  grid-area: right-menu;  /* Assigns the right menu to the grid area */
   padding: 30px 20px;
   background-color: #f8f8f8;
   border-left: 1px solid #ddd;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.05);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.05);  /* Shadow on left side */
 }
 
+/* List in right menu */
 .right-menu ul {
-  list-style: none;
+  list-style: none;  /* No bullets */
   padding: 0;
   margin: 0;
-  text-decoration: none;
+  text-decoration: none;  /* No underline */
 }
 
+/* Right menu items */
 .right-menu li {
-  padding: auto;
+  padding: auto;  
   margin: 20px 0;
 }
 
+/* Right menu links */
 .right-menu a {
   text-decoration: none;
   color: #333;
@@ -106,49 +115,55 @@ header {
   position: relative;
 }
 
+/* Right menu hover effect */
 .right-menu a:hover {
   background-color: lightblue;
-  transform: translateX(5px);
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateX(5px);  /* Slide effect */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);  /* Shadow effect */
 }
 
 /* Main Content */
 main {
-  grid-area: main;
+  grid-area: main;  /* Assigns the main content to the grid area */
   padding: 20px;
 }
   
+/* Group member cards container */
 .members {
-  display: flex;
-  justify-content: space-between;
+  display: flex;  /* Use Flexbox layout */
+  justify-content: space-between;  
   gap: 20px;
-  flex-wrap: wrap; 
-  margin-top: 20px;
+  flex-wrap: wrap;  /* Allows wrapping on smaller screens */
+  margin-top: 20px;  
 }
 
+/* Individual member card */
 .member {
-  flex: 1 1 30%;
-  min-width: 250px; 
+  flex: 1 1 30%;  /* 3 cards in one row */
+  min-width: 250px;  /* Prevents shrinking too small */
   background-color: #f9f9f9;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);  /* Light shadow */
   text-align: center;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease;  /* Smooth hover effect */
 }
 
+/* Hover effect for member cards */
 .member:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px);  /* Lift effect */
 }
 
+/* Member image */
 .member img {
   width: 100px;
   height: 100px;
-  border-radius: 50%;
+  border-radius: 50%;  /* Circular image */
   object-fit: cover;
   margin-bottom: 15px;
 }
 
+/* Member name */
 .member h3 {
   margin-bottom: 10px;
   font-size: 18px;
@@ -162,21 +177,21 @@ footer {
   border-top: 1px solid #ccc;
   background-color: #333333;
   color: white;
-  z-index: 1; 
+  z-index: 1;  /* Ensures footer is above other content */
 }
   
-/* Responsive layout */
+/* Responsive layout for screens <= 768px */
 @media (max-width: 768px) {
   html {
     width: 100%;
     margin: 0;
     padding: 0;
-    scroll-padding-top: 25%;
-    overflow-x: hidden;
+    scroll-padding-top: 25%;  /* Ensures internal links don’t get hidden under fixed menu */
+    overflow-x: hidden;  /* Prevents horizontal scrolling */
   }
   
   .container {
-    grid-template-areas:
+    grid-template-areas:  /* Adjusts grid layout for mobile */
       "left-menu"
       "header"
       "main"
@@ -186,7 +201,7 @@ footer {
 
   .left-menu {
     display: block;
-    position: sticky;
+    position: sticky;  /* Keeps menu visible when scrolling */
     height: auto;
     width: 100%;
     border-right: none;
@@ -196,7 +211,7 @@ footer {
   }
 
   .right-menu {
-    display: none;
+    display: none;  /* Hides right menu on mobile */
   }
 
   .left-menu .logo {
@@ -207,7 +222,7 @@ footer {
   }
 
   .left-menu ul {
-    display: flex;
+    display: flex;  /* Flexbox for horizontal layout */
     justify-content: space-around;
   }
 
@@ -217,6 +232,6 @@ footer {
 
   .left-menu a {
     padding: 10px;
-    font-size: 14px;
+    font-size: 14px;  /* Smaller font size for mobile */
   }
 }
