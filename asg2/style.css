@@ -128,7 +128,7 @@ main {
   padding: 20px;
 }
   
-/* Group member cards container */
+/* Group members container */
 .members {
   display: flex;  /* Use Flexbox layout */
   justify-content: space-between;  
@@ -169,6 +169,95 @@ main {
   font-size: 18px;
 }
 
+/* Contact */
+.contact-display {
+  background-color: #ede4e4;
+  color: black;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.contact-item {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.contact-item a {
+  color: black;
+  text-decoration: none;
+}
+
+.utm-link a {
+  display: inline-block;
+  background-color: #a9d4f3;
+  color: black;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.utm-link a:hover {
+  background-color: #5c92b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+.email-list ul {
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.email-list li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+.email-list a {
+  background-color: #ffe6e6;
+  color: #333;
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.email-list a:hover {
+  background-color: #ffc0c0;
+}
+
+.contact-support-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 2px solid black;
+  color: black;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-support-btn:hover {
+  background-color: white;
+  color: #822f2f;
+}
+
 /* Footer */
 footer {
   grid-area: footer;
@@ -179,7 +268,7 @@ footer {
   color: white;
   z-index: 1;  /* Ensures footer is above other content */
 }
-  
+
 /* Responsive layout for screens <= 768px */
 @media (max-width: 768px) {
   html {
