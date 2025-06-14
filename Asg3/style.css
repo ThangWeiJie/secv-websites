@@ -1,0 +1,326 @@
+/* Base styling */
+body {
+  font-family: serif;
+  background-color: #ffffff;
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  color: #000;
+}
+  
+/* Grid layout */
+.container {
+  display: grid;  /* Enables CSS Grid layout */
+  grid-template-areas:  /* Defines the layout areas */
+    "left-menu header header"
+    "left-menu main right-menu"
+    "footer footer footer";
+  grid-template-columns: 1fr 3fr 1fr;
+  margin: 0 auto;  /* Horizontally centers the container */
+}
+
+/* Horizontal rule for section separation */
+hr {
+  border: none;
+  border-top: 2px solid #ccc;
+  margin: 40px 0;  /* Vertical spacing */
+}
+
+/* Header */
+header {
+  grid-area: header;  /* Assigns the header to the grid area */
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;  /* Light line at bottom */
+}
+  
+/* Left Menu (sidebar on desktop)*/
+.left-menu {
+  grid-area: left-menu;  /* Assigns the left menu to the grid area */
+  padding: 30px 20px;
+  background-color: #f8f8f8;
+  border-right: 1px solid #ddd;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);  /* Light shadow for depth */
+  position: sticky;  /* Keeps menu visible when scrolling */
+  top: 0;  /* Sticks to the top of the viewport */
+  height: 100vh;  /* Full height of the viewport */
+}
+
+/* Logo inside the left menu */
+.left-menu .logo {
+  width: 120px; 
+  display: block;
+  margin: 0 auto 20px auto;  /* Centered logo */
+}
+
+/* List inside the left menu */
+.left-menu ul {
+  list-style: none;  /* Removes bullets */
+  padding: 0;
+  margin: 0;
+}
+  
+.left-menu li {
+  margin: 20px 0;  /* Space between menu items */
+}
+  
+/* Left menu links */
+.left-menu a {
+  text-decoration: none;  /* Removes underline from links */
+  color: #333;
+  font-weight: bold;
+  padding: 8px 12px;  
+  display: block;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;  /* Smooth hover effect */
+}
+
+/* Hover effect for left menu links */
+.left-menu a:hover {
+  background-color: lightgrey;
+}
+
+/* Right menu (sidebar on desktop) */
+.right-menu {
+  grid-area: right-menu;  /* Assigns the right menu to the grid area */
+  padding: 30px 20px;
+  background-color: #f8f8f8;
+  border-left: 1px solid #ddd;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.05);  /* Shadow on left side */
+}
+
+/* List in right menu */
+.right-menu ul {
+  list-style: none;  /* No bullets */
+  padding: 0;
+  margin: 0;
+  text-decoration: none;  /* No underline */
+}
+
+/* Right menu items */
+.right-menu li {
+  padding: auto;  
+  margin: 20px 0;
+}
+
+/* Right menu links */
+.right-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 8px 12px;  
+  display: block;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  position: relative;
+}
+
+/* Right menu hover effect */
+.right-menu a:hover {
+  background-color: lightblue;
+  transform: translateX(5px);  /* Slide effect */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);  /* Shadow effect */
+}
+
+/* Main Content */
+main {
+  grid-area: main;  /* Assigns the main content to the grid area */
+  padding: 20px;
+}
+  
+/* Group members container */
+.members {
+  display: flex;  /* Use Flexbox layout */
+  justify-content: space-between;  
+  gap: 20px;
+  flex-wrap: wrap;  /* Allows wrapping on smaller screens */
+  margin-top: 20px;  
+}
+
+/* Individual member card */
+.member {
+  flex: 1 1 30%;  /* 3 cards in one row */
+  min-width: 250px;  /* Prevents shrinking too small */
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);  /* Light shadow */
+  text-align: center;
+  transition: transform 0.2s ease;  /* Smooth hover effect */
+}
+
+/* Hover effect for member cards */
+.member:hover {
+  transform: translateY(-5px);  /* Lift effect */
+}
+
+/* Member image */
+.member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;  /* Circular image */
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Member name */
+.member h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+/* Contact */
+.contact-display {
+  background-color: #ede4e4;
+  color: black;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.contact-item {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.contact-item a {
+  color: black;
+  text-decoration: none;
+}
+
+.utm-link a {
+  display: inline-block;
+  background-color: #a9d4f3;
+  color: black;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.utm-link a:hover {
+  background-color: #5c92b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+.email-list ul {
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.email-list li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+.email-list a {
+  background-color: #ffe6e6;
+  color: #333;
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.email-list a:hover {
+  background-color: #ffc0c0;
+}
+
+.contact-support-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 2px solid black;
+  color: black;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-support-btn:hover {
+  background-color: white;
+  color: #822f2f;
+}
+
+/* Footer */
+footer {
+  grid-area: footer;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background-color: #333333;
+  color: white;
+  z-index: 1;  /* Ensures footer is above other content */
+}
+
+/* Responsive layout for screens <= 768px */
+@media (max-width: 768px) {
+  html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-padding-top: 25%;  /* Ensures internal links don’t get hidden under fixed menu */
+    overflow-x: hidden;  /* Prevents horizontal scrolling */
+  }
+  
+  .container {
+    grid-template-areas:  /* Adjusts grid layout for mobile */
+      "left-menu"
+      "header"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+
+  .left-menu {
+    display: block;
+    position: sticky;  /* Keeps menu visible when scrolling */
+    height: auto;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    box-shadow: none;
+    padding: 10px 20px;
+  }
+
+  .right-menu {
+    display: none;  /* Hides right menu on mobile */
+  }
+
+  .left-menu .logo {
+    width: 100px;
+    margin: 0 auto 10px;
+    display: block;
+    text-align: center;
+  }
+
+  .left-menu ul {
+    display: flex;  /* Flexbox for horizontal layout */
+    justify-content: space-around;
+  }
+
+  .left-menu li {
+    margin: 0;
+  }
+
+  .left-menu a {
+    padding: 10px;
+    font-size: 14px;  /* Smaller font size for mobile */
+  }
+}
