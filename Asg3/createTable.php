@@ -1,7 +1,7 @@
 <?php
 require_once ('config.php');
      
-$sql = "CREATE TABLE contact_messages (
+$sql = "CREATE TABLE IF NOT EXISTS contact_messages (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100),
     email VARCHAR(100),
@@ -11,10 +11,8 @@ $sql = "CREATE TABLE contact_messages (
 )";
 
 if(mysqli_query($conn, $sql)) {
-    echo "Table MyGuests created successfully.";
+    echo "Table contact_messages created successfully.";
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }
-
-mysqli_close($conn);
 ?>

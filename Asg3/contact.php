@@ -1,6 +1,7 @@
 <?php
 // Database connection
-require_once ('config.php'); 
+require_once('createDB.php'); 
+require_once('createTable.php');
 
 // Process form submission
 if(isset($_POST['submit'])) {
@@ -59,5 +60,6 @@ if(isset($_POST['submit'])) {
     echo "<p>No form submitted.</p>";
 }
 
-mysqli_close($conn);
+    mysqli_close($conn);
+
 ?>
