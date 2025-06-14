@@ -2,9 +2,8 @@
     $db_host = "localhost";
     $db_user = "root";
     $db_pass = "";
-    $db_name = "asg3_db";
-
-    $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+    
+    $conn = mysqli_connect($db_host, $db_user, $db_pass);
 
     // Check connection
     if (!$conn) {
